@@ -2,100 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You ❤️</title>
+  <title>Valentine Test</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      height: 100vh;
       font-family: Arial, sans-serif;
-      color: #fff;
+      background-color: #ffccd5;
+      color: #333;
+      margin: 0;
     }
-
     .card {
-      background: rgba(0,0,0,0.5);
+      background-color: #fff;
       padding: 40px;
-      border-radius: 20px;
+      border-radius: 15px;
       text-align: center;
-      max-width: 600px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    #text {
-      font-size: 18px;
-      line-height: 1.5;
-      min-height: 120px;
-      margin-bottom: 20px;
-    }
-
     button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      background: #ff4d6d;
-      color: white;
+      margin-top: 20px;
+      padding: 10px 20px;
       font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff4d6d;
+      color: white;
       cursor: pointer;
     }
-
     button:hover {
-      background: #ff1e4d;
-    }
-
-    .final {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #ffe0e6;
-      display: none;
+      background-color: #ff1e4d;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hey Love ❤️</h1>
-    <div id="text"></div>
-    <button onclick="showFinal()">Click Me</button>
-    <div class="final" id="finalText">
-      Will you be my Valentine? 💖
-    </div>
-  </div>
 
-  <script>
-    const message = `Even though we're miles apart,
-my heart has always known where it belongs.
+<div class="card">
+  <h1>Hey Love ❤️</h1>
+  <p id="text">This is a test message.</p>
+  <button onclick="showMessage()">Click Me!</button>
+</div>
 
-Every message from you,
-every call,
-every smile…
+<script>
+  function showMessage() {
+    document.getElementById('text').innerText = "Will you be my Valentine? 💖";
+  }
+</script>
 
-You are my favorite place,
-even from far away.`;
-
-    let i = 0;
-    const speed = 50;
-    const textDiv = document.getElementById("text");
-
-    function typeWriter() {
-      if (i < message.length) {
-        textDiv.innerHTML += message.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-
-    function showFinal() {
-      document.getElementById("finalText").style.display = "block";
-    }
-
-    typeWriter();
-  </script>
 </body>
 </html>
